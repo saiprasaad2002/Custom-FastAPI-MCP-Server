@@ -1,0 +1,30 @@
+[project]
+name = "mcp-accenture"
+version = "0.1.0"
+description = "MCP Accenture Project"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-dotenv",
+    "fastapi-mcp",
+    "sqlalchemy",
+    "PyMuPDF",
+    "python-docx",
+    "sentence-transformers",
+    "ollama",
+    "resend",
+    "torch",
+    "scikit-learn",
+    "python-multipart",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["mcp_accenture"] 
