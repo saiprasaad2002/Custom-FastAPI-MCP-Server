@@ -58,7 +58,7 @@ The application follows a modular, agent-based architecture orchestrated through
 | Component             | Technology             | Purpose                              |
 |-----------------------|------------------------|--------------------------------------|
 | **Framework**         | FastAPI               | Asynchronous API server             |
-| **MCP **     | fastapi-mcp           | Standardized Multi-agent workflow orchestration  |
+| **MCP**     | fastapi-mcp           | Standardized Multi-agent workflow orchestration  |
 | **Database**          | SQLAlchemy, SQLite    | Persistent storage                  |
 | **NLP**               | sentence-transformers | Semantic similarity scoring         |
 | **LLM**               | ollama (mistral:7b)   | Job description summarization       |
