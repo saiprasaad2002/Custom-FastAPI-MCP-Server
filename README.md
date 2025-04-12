@@ -6,7 +6,7 @@
 
 ## Overview
 
-The **Job Application Agent** is a sophisticated, multi-agentic workflow orchestration system built using the **Model Context Protocol (MCP)** framework on top of **FastAPI**. This API automates the processing of job applications by integrating advanced natural language processing (NLP), semantic analysis, and email notification workflows. It leverages multiple specialized agents (tools) to extract resume content, generate job summaries, calculate semantic similarity scores, and dispatch interview invitations—all orchestrated through a modular MCP server.
+The **Job Application Agent** is a sophisticated, agentic workflow orchestration system built using the **Model Context Protocol (MCP)** framework on top of **FastAPI**. This API automates the processing of job applications by integrating advanced natural language processing (NLP), semantic analysis, and email notification workflows. It leverages multiple specialized agents (tools) to extract resume content, generate job summaries, calculate semantic similarity scores, and dispatch interview invitations—all orchestrated through a modular MCP server.
 
 The system is designed for scalability, extensibility, and robustness, making it suitable for HR automation, talent acquisition pipelines, and intelligent document processing use cases. It employs libraries such as `sentence-transformers` for semantic embeddings, `ollama` for LLM-driven workflow, and `resend` for email notifications, with persistent storage handled via SQLAlchemy and SQLite.
 
