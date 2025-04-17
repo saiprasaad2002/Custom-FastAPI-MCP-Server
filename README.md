@@ -1,4 +1,4 @@
-# Job Application Agent
+# Custom FastAPI MCP Server - Job Application Processing Agent
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104.1-green.svg)
@@ -6,9 +6,8 @@
 
 ## Overview
 
-The **Job Application Agent** is a sophisticated, agentic workflow orchestration system built using the **Model Context Protocol (MCP)** framework on top of **FastAPI**. This API automates the processing of job applications by integrating advanced natural language processing (NLP), semantic analysis, and email notification workflows. It leverages multiple specialized agents (tools) to extract resume content, generate job summaries, calculate semantic similarity scores, and dispatch interview invitations—all orchestrated through a modular MCP server.
+This project is a sophisticated, agentic workflow orchestration system built using the **Model Context Protocol (MCP)** on top of **FastAPI**. This application automates the processing of job applications by integrating `Mistral:7b` from Ollama, `all-MiniLM-L6-v2` for vector embeddings, calculates cosine similarity, and email notification workflows (using Resend). It leverages multiple specialized agents (tools) to extract resume content, generate job summaries, calculate semantic similarity scores, and dispatch interview invitations—all orchestrated through a single custom MCP server and utilises SQLite for persistent storage handled with `Object-Relational Mapping`. This application is designed for scalability, extensibility, and robustness, making it suitable for HR automation, talent acquisition pipelines, and intelligent document processing use cases.
 
-The system is designed for scalability, extensibility, and robustness, making it suitable for HR automation, talent acquisition pipelines, and intelligent document processing use cases. It employs libraries such as `sentence-transformers` for semantic embeddings, `ollama` for LLM-driven workflow, and `resend` for email notifications, with persistent storage handled via SQLAlchemy and SQLite.
 
 ---
 
@@ -21,7 +20,7 @@ The system is designed for scalability, extensibility, and robustness, making it
 - **Duplicate Detection**: Identifies existing applications by email, resume content, and job description to prevent redundant processing.
 - **Resume Validation**: Validates uploaded documents as resumes using LLM-based analysis.
 - **Error Logging**: Persists detailed error logs in a SQLite database for debugging and auditing.
-- **MCP Integration**: Orchestrates multi-agent workflows via a custom MCP server, exposing tools as reusable endpoints.
+- **Custom MCP Server**: Orchestrates the agent workflows via a custom MCP server, exposing tools as reusable GET endpoints.
 
 ---
 
@@ -132,8 +131,6 @@ Accessible under the `/mcp` path, these tools are orchestrated internally by the
 
 ## Dependencies
 
-Dependencies are managed via `pyproject.toml` using `uv`. Key libraries include:
-
 - `fastapi`: API framework
 - `fastapi-mcp`: MCP orchestration
 - `sentence-transformers`: Semantic embeddings
@@ -142,7 +139,6 @@ Dependencies are managed via `pyproject.toml` using `uv`. Key libraries include:
 - `sqlalchemy`: ORM for database
 - `PyMuPDF`, `python-docx`: File parsing
 
-See `pyproject.toml` for the full list.
 
 ## Usage Notes
 
